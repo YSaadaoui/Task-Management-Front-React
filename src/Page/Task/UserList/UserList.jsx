@@ -16,7 +16,7 @@ const style = {
     boxShadow: 24,
     p: 2,
 };
-
+const tasks=[1,1,1,1]
 export default function UserList({handleClose,open}) {
 
 
@@ -30,22 +30,26 @@ export default function UserList({handleClose,open}) {
             >
                 <Box sx={style}>
                     {
-                        [1,1,1].map((item)=><div className='flex items-center justify-between w-full'>
-                            <div>
-                                <ListItem>
-                                    <ListItemAvatar>
-                                        <Avatar src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'/>
-                                    </ListItemAvatar>
-                                    <ListItemText
-                                        secondary="@code_with_you"
-                                        primary={"Code with you"}/>
-                                </ListItem>
-                            </div>
-                            <div>
-                                <Button className='customeButton'> select</Button>
-                            </div>
-                            <Divider variant='inset'/>
-                        </div>)
+                        tasks.map((item,index)=>
+                            <>
+                                <div className='flex items-center justify-between w-full'>
+                                    <div>
+                                        <ListItem>
+                                            <ListItemAvatar>
+                                                <Avatar src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'/>
+                                            </ListItemAvatar>
+                                            <ListItemText
+                                                secondary="@code_with_you"
+                                                primary={"Code with you"}/>
+                                        </ListItem>
+                                    </div>
+                                    <div>
+                                        <Button className='customeButton'> select</Button>
+                                    </div>
+                                </div>
+                                {index!==tasks.length-1&&  <Divider variant='inset'/>}
+                            </>
+                            )
                     }
                 </Box>
             </Modal>
