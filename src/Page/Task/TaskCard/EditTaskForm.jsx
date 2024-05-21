@@ -23,7 +23,7 @@ const style = {
 
 const tags=["Angular","React","Vuejs","Spring boot","Node js","Python"]
 
-export default function UpdateTaskForm({handleClose,open}) {
+export default function EditTaskForm({handleClose,open}) {
     const [formData,setFormData]=useState({
         title:"",
         image:"",
@@ -78,6 +78,10 @@ export default function UpdateTaskForm({handleClose,open}) {
         console.log("formData : ",formData," deadline : ",formData.deadline)
         handleClose()
     }
+
+    // usEffect(()=>{
+    //
+    // },[])
 
     return (
         <div>
@@ -151,7 +155,7 @@ export default function UpdateTaskForm({handleClose,open}) {
                                         type="submit"
                                         sx={{padding:".9rem"}}
                                 >
-                                    Create
+                                    Update
                                 </Button>
                             </Grid>
                         </Grid>
